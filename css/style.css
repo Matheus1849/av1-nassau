@@ -1,0 +1,541 @@
+:root{
+    --cor-1: #F22E52;
+    --cor-2: #F2E205;
+    --cor-3: #F29F05;
+    --cor-4: #d32f2f;
+    --cor-5: #000000;
+    --cor-6: #ffffff;
+    --cor-7: #F27A5E;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+@media (max-width:450px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .menu-openner {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:380px) {
+    header h1 {
+        font-size: 1rem;
+    }
+    .menu-openner {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:1000px) {
+    .comida-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:840px) {
+    body {
+        flex-direction: column;
+    }
+    .comida-area {
+        display:block;
+    }
+    header {
+        display:flex;
+    }
+    aside {
+        width:auto;
+        position:fixed;
+        left:100vw;
+        right:0;
+        top:0;
+        bottom:0;
+        transition: all ease .2s;
+    }
+    aside.show {
+        width:auto;
+    }
+    .cart--area {
+        width:100vw;
+    }
+
+    .menu-closer {
+        display:block;
+    }
+
+    .comidaWindowArea {
+        justify-content:flex-start;
+        align-items: flex-start;
+    }
+
+    .comidaWindowBody {
+        width:100vw;
+        display:block;
+        padding:20px;
+        box-shadow:none;
+        margin:0;
+    }
+
+    .comidaImagemGrande img {
+        width: 75%;
+        height: auto;
+    }
+
+    .comidaInfo h1 {
+        margin-top:20px;
+    }
+
+    .comidaInfo--qtarea {
+        height:60px;
+    }
+    
+    .comidaInfo--qtarea button {
+        font-size:25px;
+        padding:0px 25px;
+    }
+
+    .comidaInfo--qt {
+        line-height: 60px;
+        font-size:20px;
+    }
+
+    .comidaInfo--addButton {
+        font-size:20px;
+        display:block;
+        text-align:center;
+        margin:30px auto;
+    }
+
+    .comidaInfo--cancelButton {
+        display:none;
+    }
+
+    .comidaInfo--cancelMobileButton {
+        display:block;
+    }
+
+}
+
+body {
+    background-color: var(--cor-6);
+    font-size:15px;
+    display:flex;
+    margin:0;
+    min-height:100vh;
+}
+
+.models {
+    display:none;
+}
+
+header {
+    position: fixed;
+    left:0;
+    top:0;
+    right:0;
+    height:60px;
+    background-color: var(--cor-2);
+    display:flex; /* none; */
+    justify-content:space-between; /* flex-end; */
+    align-items: center;
+}
+
+header h1 {
+    margin-left: 1rem;
+    color: var(--cor-1);
+}
+
+.menu-openner {
+    margin-right: 15px;
+    font-size: 26px;
+    background-color: var(--cor-7);
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.menu-openner span {
+    margin-right:10px;
+}
+
+.menu-closer {
+    width:32px;
+    height:32px;
+    display:none;
+    font-size: 30px;
+}
+
+aside {
+    background-color: var(--cor-3);
+    width:0vw;
+    transition:all ease .3s;
+    overflow-x:hidden;
+}
+
+aside.show {
+    width:30vw;
+}
+
+.cart--area {
+    margin-top: 30px;
+    padding:20px;
+}
+
+.cart--area h1 {
+    display: relative;
+}
+
+main {
+    flex:1;
+    padding:20px;
+    margin-top:60px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.comida-area {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.comidas-item {
+    text-align: center;
+    max-width:250px;
+    margin:0 auto 50px auto;
+}
+
+.comidas-item a {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    text-decoration: none;
+}
+
+.comidas-item--img {
+    width:200px;
+    height:200px;
+    background-color: var(--cor-6);
+    /* border-radius:100px; */
+    box-shadow:0px 10px 50px rgba(0, 0, 0, 0.2);
+}
+
+.comidas-item--img img {
+    width:100%;
+    height:auto;
+}
+
+.comidas-item--add {
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border-radius:12px;
+    background-color: var(--cor-1);
+    text-align:center;
+    color: var(--cor-6);
+    font-size:22px;
+    cursor:pointer;
+    margin-top:-25px;
+    transition:all ease .2s;
+}
+
+.comidas-item--price {
+    font-size:15px;
+    color:#333;
+    margin-top:5px;
+}
+
+.comidas-item--name {
+    font-size:20px;
+    font-weight: bold;
+    color: var(--cor-5);
+    margin-top:5px;
+}
+
+.comidas-item--desc {
+    font-size:13px;
+    color:#555555f1;
+    margin-top:10px;
+}
+
+.comidaWindowArea {
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    background-color:rgba(255, 255, 255, 0.5);
+    display:none;
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y:auto;
+}
+
+.comidaWindowBody {
+    width:1000px;
+    background-color:#FFF;
+    box-shadow:0px 0px 15px #99999970;
+    display:flex;
+    margin:20px 0px;
+}
+
+.comidaImagemGrande {
+    flex:1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comidaImagemGrande--back {
+    position:absolute;
+    width:30px;
+    height:30px;
+    background-color: var(--cor-5);
+}
+
+.comidaImagemGrande img {
+    height:400px;
+    width:auto;
+}
+
+.comidaInfo {
+    flex:1;
+    padding-bottom:50px;
+}
+
+.comidaInfo h1 {
+    margin-top:50px;
+}
+
+.comidaInfo .comidaInfo--desc {
+    font-size:15px;
+    color:#999;
+    margin-top:10px;
+}
+
+.comidaInfo--sector {
+    color:#CCC;
+    text-transform: uppercase;
+    font-size:14px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.comidaInfo--sizes {
+    display:inline-flex;
+    /* border-radius:10px; */
+    overflow:hidden;
+}
+
+.comidaInfo--size {
+    padding:10px 15px;
+    color: var(--cor-5);
+    background-color:#EEE;
+    font-size:13px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.comidaInfo--size:hover {
+    background-color:#CCC;
+}
+
+.comidaInfo--size.selected {
+    background-color: var(--cor-1);
+    color: var(--cor-6);
+}
+
+.comidaInfo--size.selected span {
+    color:#D6D6D6;
+}
+
+.comidaInfo--size span {
+    font-size:12px;
+    color:#999;
+    font-weight: normal;
+}
+
+.comidaInfo--price {
+    display:flex;
+    align-items:center;
+}
+
+.comidaInfo--actualPrice {
+    font-size:28px;
+    margin-right:30px;
+}
+
+.comidaInfo--qtarea {
+    display:inline-flex;
+    background-color: var(--cor-6);
+    height:30px;
+}
+
+.comidaInfo--qtarea button {
+    border:0;
+    background-color:transparent;
+    font-size:17px;
+    outline:0;
+    cursor:pointer;
+    padding:0px 10px;
+    color: #3333335b;
+}
+
+.comidaInfo--qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color: var(--cor-5);
+}
+
+.comidaInfo--addButton {
+    margin-top:30px;
+    padding:20px 30px;
+    background-color: #d32f2f;
+    color:#FFF;
+    display:inline-block;
+    cursor:pointer;
+    margin-right:30px;
+}
+
+.comidaInfo--addButton:hover {
+    background-color: #a52424;
+}
+
+.comidaInfo--cancelButton {
+    display:inline-block;
+    cursor:pointer;
+}
+
+.comidaInfo--cancelMobileButton {
+    display:none;
+    height:40px;
+    text-align:center;
+    line-height: 40px;
+    margin-bottom:30px;
+}
+
+.cart {
+    margin-bottom:20px;
+}
+
+.cart--item {
+    display:flex;
+    align-items:center;
+    margin:10px 0;
+}
+
+.cart--item img {
+    width:40px;
+    height:40px;
+    margin-right:20px;
+}
+
+.cart--item-nome {
+    flex:1;
+}
+
+.cart--item--qtarea {
+    display:inline-flex;
+    background-color: var(--cor-6);;
+    height:30px;
+}
+
+.cart--item--qtarea button {
+    border:0;
+    background-color:transparent;
+    font-size:17px;
+    outline:0;
+    cursor:pointer;
+    padding:0px 10px;
+    color: var(--cor-5);
+}
+
+.cart--item--qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color: var(--cor-5);
+}
+
+.cart--totalitem {
+    padding:15px 0;
+    border-top:1px solid var(--cor-1);
+    color: var(--cor-5);
+    display:flex;
+    justify-content: space-between;
+    font-size:15px;
+}
+
+.cart--totalitem span:first-child {
+    font-weight: bold;
+}
+
+.cart--totalitem.big {
+    font-size:20px;
+    color: var(--cor-5);
+    font-weight: bold;
+}
+
+.cart--finalizar {
+    padding:15px 25px;
+    background-color:#d32f2f;
+    color: var(--cor-6);
+    cursor:pointer;
+    text-align:center;
+    margin-top:20px;
+    border:2px solid var(--cor-5);
+    transition: all ease .2s;
+}
+
+.cart--finalizar:hover {
+    background-color:#a52424;
+}
+
+#img-logo {
+    width: 50px;
+}
+
+fieldset{
+    border: 2px solid var(--cor-5);
+}
+
+legend, label{
+    font-weight: bold;
+}
+
+.form-container {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+  
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+  
+.form-container button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

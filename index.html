@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Hunger</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- modelos dos itens  -->
+    <div class="models">
+
+        <!-- comidas no menu -->
+        <div class="comidas-item">
+            <a href="">
+                <div class="comidas-item--img"><img src="" /></div>
+                <div class="comidas-item--add">+</div>
+            </a>
+            <div class="comidas-item--price"></div>
+            <div class="comidas-item--name"></div>
+            <div class="comidas-item--desc"></div>
+        </div>
+
+        <!-- comidas no carrinho -->
+        <div class="cart--item">
+            <img src="" />
+            <div class="cart--item-nome"></div>
+            <div class="cart--item--qtarea">
+                <button class="cart--item-qtmenos">-</button>
+                <div class="cart--item--qt">1</div>
+                <button class="cart--item-qtmais">+</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!--modo mobile -->
+    <header>
+        <h1>Fast hunger</h1>
+        <div class="menu-openner"><span>0</span>itens no carrinho</div>
+    </header>
+
+    <!-- Menu -->
+    <main>
+        <h2>Menu</h2>
+        <div class="comida-area"></div>
+    </main>
+
+    <!-- carrinho -->
+    <aside>
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <h1>Seu pedido</h1>
+            <div class="cart"></div>
+            <div class="cart--details">
+                <form action="" method="post">                
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required><br>
+                
+                    <label for="endereco">Endereço Completo:</label>
+                    <input type="text" id="endereco" name="endereco" required><br></textarea>
+                    <br>
+
+                    <fieldset>
+                      <legend>Escolha os molhos:</legend>
+                      <input type="checkbox" id="ketchup" name="molhos[]" value="ketchup">
+                      <label for="ketchup">Ketchup</label>
+                      <input type="checkbox" id="maionese" name="molhos[]" value="maionese">
+                      <label for="maionese">Maionese</label>
+                    </fieldset>
+                
+                    <fieldset>
+                      <legend>Forma de Pagamento:</legend>
+                      <input type="radio" id="credito" name="pagamento" value="credito" required>
+                      <label for="credito">Crédito</label>
+                      <input type="radio" id="debito" name="pagamento" value="debito">
+                      <label for="debito">Débito</label>
+                      <input type="radio" id="pix" name="pagamento" value="pix">
+                      <label for="pix">Pix</label>
+                    </fieldset>
+                    <br>
+
+                    <button type="submit" class="cart--finalizar">Finalizar a compra</button>
+                    <br>
+                    <br>
+
+                  </form>
+                <div class="cart--totalitem total big">
+                    <span>Total</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- detalhes menu -->
+    <div class="comidaWindowArea">
+        <div class="comidaWindowBody">
+            <div class="comidaInfo--cancelMobileButton">Voltar</div>
+            <div class="comidaImagemGrande">
+                <img src="" />
+            </div>
+            <div class="comidaInfo">
+                <h1>--</h1>
+                <div class="comidaInfo--desc"></div>
+                <div class="comidaInfo--sizearea">
+                    <div class="comidaInfo--sector">Tamanho único</div>
+                </div>
+                <div class="comidaInfo--pricearea">
+                    <div class="comidaInfo--sector">Preço</div>
+                    <div class="comidaInfo--price">
+                        <div class="comidaInfo--actualPrice"></div>
+                        <div class="comidaInfo--qtarea">
+                            <button class="comidaInfo--qtmenos">-</button>
+                            <div class="comidaInfo--qt">1</div>
+                            <button class="comidaInfo--qtmais">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="comidaInfo--addButton">Adicionar ao carrinho</div>
+                <div class="comidaInfo--cancelButton">Cancelar</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="comidas.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
